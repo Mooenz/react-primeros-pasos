@@ -18,7 +18,13 @@ const App = () => {
     setUser(!user);
   };
 
-  const frutas = ['🥝', '🥥', '🍇', '🍈', '🍓'];
+  const frutas = [
+    { valor: '🥝', nombre: 'Kiwi', cantidad: 48 },
+    { valor: '🍓', nombre: 'Fresa', cantidad: 37 },
+    { valor: '🥥', nombre: 'Coco', cantidad: 8 },
+    { valor: '🍇', nombre: 'Uva', cantidad: 10 },
+    { valor: '🍎', nombre: 'Manzana', cantidad: 15 },
+  ];
 
   return (
     <div className="p-4 h-auto">
@@ -29,7 +35,11 @@ const App = () => {
 
         {user ? <SaludoBienvenida /> : <SaludoDespedida />}
 
-        {user ? <Frutas frutasProp={frutas} /> : <p className='text-warning'>Frutas no están disponibles</p>}
+        {user ? (
+          <Frutas frutasProp={frutas} />
+        ) : (
+          <p className="text-warning">Frutas no están disponibles</p>
+        )}
 
         <button
           className="btn btn-primary"

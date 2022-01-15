@@ -1,14 +1,21 @@
 const Frutas = (props) => {
   const { frutasProp } = props;
+  console.log(props);
   return (
     <>
-      <ul>
+      <ol className="list-group list-group-numbered">
         {frutasProp.map((fruta, indice) => (
-          <li key={fruta}>
-            {indice + 1} - {fruta}
+          <li
+            className="d-flex justify-content-between align-items-start"
+            key={fruta.valor}
+          >
+            <div className="ms-2 me-auto fw-bold">
+            {fruta.valor} {fruta.nombre}
+            </div>
+            <span className="fw-bold">{fruta.cantidad}</span>
           </li>
         ))}
-      </ul>
+      </ol>
       <p>Lorem ipsum dolor sit amen.</p>
     </>
   );
