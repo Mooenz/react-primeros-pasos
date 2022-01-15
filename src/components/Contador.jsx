@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../main.css'
+import '../index.css'
 
 const Contador = () => {
   const [contador, setContador] = useState(0);
